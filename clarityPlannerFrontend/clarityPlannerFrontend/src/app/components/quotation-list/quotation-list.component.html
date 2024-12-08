@@ -1,0 +1,38 @@
+<div>
+  <h2>Quotations</h2>
+</div>
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <!-- Column Headers -->
+      <ion-col><b>Customer Name</b></ion-col>
+      <ion-col><b>Address</b></ion-col>
+      <ion-col><b>Email</b></ion-col>
+      <ion-col><b>Quotation ID</b></ion-col>
+      <ion-col><b>Date</b></ion-col>
+      <ion-col><b>Room Type</b></ion-col>
+      <ion-col><b>Room Width</b></ion-col>
+      <ion-col><b>Room Height</b></ion-col>
+      <ion-col><b>Room Color</b></ion-col>
+      <ion-col><b>Paint Type</b></ion-col>
+      <ion-col><b>Actions</b></ion-col>
+    </ion-row>
+    <!-- Data Rows -->
+    <ion-row *ngFor="let quotation of quotations">
+      <ion-col>{{ quotation.customerName }}</ion-col>
+      <ion-col>{{ quotation.address }}</ion-col>
+      <ion-col>{{ quotation.email }}</ion-col>
+      <ion-col>{{ quotation.quotationID }}</ion-col>
+      <ion-col>{{ quotation.quotationDate | date: 'shortDate' }}</ion-col>
+      <ion-col>{{ quotation.roomType }}</ion-col>
+      <ion-col>{{ quotation.width }}</ion-col>
+      <ion-col>{{ quotation.length }}</ion-col>
+      <ion-col>{{ quotation.color }}</ion-col>
+      <ion-col>{{ quotation.paintType }}</ion-col>
+      <ion-col>
+      
+        <ion-button color="danger" (click)="deleteQuotation(quotation._id)">Delete</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

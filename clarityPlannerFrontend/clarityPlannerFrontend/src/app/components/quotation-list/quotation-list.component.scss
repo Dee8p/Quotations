@@ -1,0 +1,102 @@
+ion-content {
+    --padding: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #f9f9f9;
+  
+    h2 {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #333;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+  
+    ion-grid {
+      width: 100%;
+      max-width: 1200px;
+      background: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+      overflow-x: auto;
+  
+      ion-row {
+        display: flex;
+        align-items: center;
+        padding: 8px 16px;
+        border-bottom: 1px solid #e0e0e0;
+  
+        &:first-of-type {
+          background-color: #f4f4f4;
+          font-weight: bold;
+          text-transform: uppercase;
+          color: #555;
+        }
+  
+        &:last-child {
+          border-bottom: none;
+        }
+  
+        ion-col {
+          flex: 1;
+          text-align: center;
+          padding: 8px;
+          font-size: 0.9rem;
+          color: #444;
+  
+          &:nth-child(11) {
+            text-align: right;
+          }
+  
+          ion-button {
+            margin: 0 4px;
+  
+            &.danger {
+              --background: #e57373;
+              --color: #fff;
+            }
+  
+            &.primary {
+              --background: #64b5f6;
+              --color: #fff;
+            }
+          }
+        }
+      }
+    }
+  
+    @media (max-width: 768px) {
+      ion-grid {
+        ion-row {
+          flex-wrap: wrap;
+  
+          ion-col {
+            flex: 0 0 50%; // Two columns per row for smaller screens
+            padding: 4px;
+          }
+  
+          &:first-of-type ion-col {
+            flex: 1; // Full-width header columns
+          }
+        }
+      }
+    }
+  
+    @media (max-width: 480px) {
+      ion-grid {
+        ion-row {
+          ion-col {
+            flex: 0 0 100%; // Full-width for extra small screens
+            text-align: left;
+          }
+  
+          &:first-of-type ion-col {
+            display: none; // Hide headers on very small screens
+          }
+        }
+      }
+    }
+  }
+  

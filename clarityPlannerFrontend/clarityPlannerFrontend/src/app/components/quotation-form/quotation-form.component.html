@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{ isEditMode ? 'Edit' : 'Add' }} Quotation</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="quotationForm" (ngSubmit)="saveQuotation()">
+    <!-- Customer Details -->
+    <ion-item>
+      <ion-label>Customer Name</ion-label>
+      <ion-input formControlName="customerName" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Address</ion-label>
+      <ion-input formControlName="address" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Email</ion-label>
+      <ion-input formControlName="email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Quotation ID</ion-label>
+      <ion-input formControlName="quotationID" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Room Type</ion-label>
+      <ion-input formControlName="roomType" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Room Width</ion-label>
+      <ion-input formControlName="width" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Room Height</ion-label>
+      <ion-input formControlName="length" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Room Color</ion-label>
+      <ion-input formControlName="color" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Paint Type</ion-label>
+      <ion-input formControlName="paintType" required></ion-input>
+    </ion-item>
+
+    <!-- Save Button -->
+    <ion-button expand="block" type="submit" [disabled]="quotationForm.invalid">Save</ion-button>
+  </form>
+</ion-content>
+
+

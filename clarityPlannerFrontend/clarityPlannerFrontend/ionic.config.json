@@ -1,0 +1,7 @@
+{
+  "name": "clarityPlannerFrontend",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
